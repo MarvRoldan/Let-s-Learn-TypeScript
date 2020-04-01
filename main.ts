@@ -109,3 +109,28 @@ var neverReturnFunction = (): never => { // Infinite while loop! There are a few
         console.log("never returning!");
     }
 }
+
+/**
+ * Any....
+ * It's controversial.
+ * Indicates potental design failure, or lack of knowledge of union types, etc. Usually...
+ */
+var functionWithAny = (a: any, b: any): any => {
+    return 9000 + "Hello " + 9001 + "World!";
+}
+console.log(functionWithAny("Hello " + "World!", false)); // Look at what it returns when called....
+
+/**
+ * Type GAURDS and type CASTING.
+ */
+// Typeguards are mostly something that belongs in a museum at this point. For most cases. 
+// Also who wants to check these manually? 
+var functionWithTypeGuards = (a: any): void => {
+    if (typeof a === "string") { // The typeguard is the "typeof a === "string""
+        console.log("Input is a string data type!");
+    } else if (typeof a === "number") { // The typeguard is the "typeof a === "number""
+        console.log("Input is a number data type!");
+    }
+}
+functionWithTypeGuards("Hello World!");
+functionWithTypeGuards(8);

@@ -48,4 +48,18 @@ var neverReturnFunction = function () {
         console.log("never returning!");
     }
 };
+var functionWithAny = function (a, b) {
+    return 9000 + "Hello " + 9001 + "World!";
+};
+console.log(functionWithAny("Hello " + "World!", false));
+var functionWithTypeGuards = function (a) {
+    if (typeof a === "string") {
+        console.log("Input is a string data type!");
+    }
+    else if (typeof a === "number") {
+        console.log("Input is a number data type!");
+    }
+};
+functionWithTypeGuards("Hello World!");
+functionWithTypeGuards(8);
 //# sourceMappingURL=main.js.map
