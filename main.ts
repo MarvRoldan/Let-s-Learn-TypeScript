@@ -21,7 +21,9 @@ const var1 = 1; // Not allowed to change in the code.
 
 const stringVar1 = "stringy"; // stringVar1 is always going to be "stringy".
 
-// LET: Board data type
+/*
+* LET: Board data type
+*/
 let anotherLetVariableNumber = 1;
 anotherLetVariableNumber = 2;
 
@@ -49,3 +51,37 @@ anotherVariable = false;
 
 let numberExample: number;
 // numberExample = "string"; // Again won't work!
+numberExample = 4; // WORK!
+
+/**
+ * LOOPS
+ */
+for(let i = 0; i < 10; i++) { // let i is number type so 0 1 2 3 4 5 6 7 8 9.
+    console.log(i);
+}
+
+let booleanExample: boolean;
+booleanExample = true || (true && true);
+console.log(booleanExample);
+
+
+/**
+ * Functions and data types!
+ */
+function addNumbers(a: number, b: number): number {
+    return a + b;
+    // return = true; // These won't work!
+    // return = "string";
+    // return = {};
+}
+
+console.log(addNumbers(4, 6));
+// addNumbers("string", "string"); // Won't work. Only numbers!
+
+/**
+ * Strings
+ */
+var concatenateStrings = (stringA: string, stringB: string): string => {
+    return stringA + stringB; // Concatenates Strings!
+}
+console.log(concatenateStrings("Hello ", "World!"));
