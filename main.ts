@@ -134,3 +134,21 @@ var functionWithTypeGuards = (a: any): void => {
 }
 functionWithTypeGuards("Hello World!");
 functionWithTypeGuards(8);
+
+// Type casting.
+let stringVariable = "123";
+const fn2 = (inputNumber: number) => {
+    console.log(inputNumber);
+}
+
+// fn2(stringVariable); // Won't accept anothing but a number! Cast it!
+fn2(Number(stringVariable));
+// fn2(+stringVariable); // "+" also converts to a number!
+
+const numberVariable = 432;
+const fn3 = (inputString: string) => {
+    console.log(inputString);
+}
+
+// fn3(numberVariable); // Won't accept anothing but a string! Cast it!
+fn3(String(numberVariable));

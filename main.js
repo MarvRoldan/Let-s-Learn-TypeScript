@@ -62,4 +62,14 @@ var functionWithTypeGuards = function (a) {
 };
 functionWithTypeGuards("Hello World!");
 functionWithTypeGuards(8);
+var stringVariable = "123";
+var fn2 = function (inputNumber) {
+    console.log(inputNumber);
+};
+fn2(Number(stringVariable));
+var numberVariable = 432;
+var fn3 = function (inputString) {
+    console.log(inputString);
+};
+fn3(String(numberVariable));
 //# sourceMappingURL=main.js.map
