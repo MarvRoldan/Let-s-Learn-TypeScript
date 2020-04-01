@@ -27,3 +27,25 @@ anotherLetVariableNumber = 2;
 
 let anotherLetStringVariable = "string original";
 anotherLetStringVariable = "string the remix";
+
+let anotherLetBoolean = true;
+anotherLetBoolean = false;
+
+// What if we define the types??
+// Why exactly are we not using type inference?? It's the same result...
+// Do you trust the TypeScript compiler....?
+let boolExampleDefined: boolean = true;
+
+let numberExampleDefined: number = 3;
+
+let stringExampleDefined: string = "string!";
+stringExampleDefined = "new string!";
+// stringExampleDefined = 1; // Won't work. Expects a "string".
+
+let anotherVariable; // One edge case. NO DATA ASSIGNED. TypeScript doesn't know.
+anotherVariable = 2;
+anotherVariable = "string";
+anotherVariable = false;
+
+let numberExample: number;
+// numberExample = "string"; // Again won't work!
