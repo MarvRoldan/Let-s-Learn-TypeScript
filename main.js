@@ -36,4 +36,16 @@ var concatenateStrings = function (stringA, stringB) {
     return stringA + stringB;
 };
 console.log(concatenateStrings("Hello ", "World!"));
+var returnNothingFunction = function (a) {
+    console.log(a);
+};
+var booleansAndOperatorFunction = function (a, b) {
+    return a && b;
+};
+console.log(booleansAndOperatorFunction(true, true));
+var neverReturnFunction = function () {
+    while (true) {
+        console.log("never returning!");
+    }
+};
 //# sourceMappingURL=main.js.map

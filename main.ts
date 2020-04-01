@@ -85,3 +85,27 @@ var concatenateStrings = (stringA: string, stringB: string): string => {
     return stringA + stringB; // Concatenates Strings!
 }
 console.log(concatenateStrings("Hello ", "World!"));
+
+/**
+ * Let's say we want a method that will not return a value.
+ */
+var returnNothingFunction = (a: string): void => {
+    console.log(a);
+}
+
+/**
+ * Booleans
+ */
+const booleansAndOperatorFunction = (a: boolean, b: boolean): boolean => {
+    return a && b;
+}
+console.log(booleansAndOperatorFunction(true, true));
+
+/**
+ * Let's say a method will NEVER return. It returns NEVER. 
+ */
+var neverReturnFunction = (): never => { // Infinite while loop! There are a few fringe cases where you'd maybe want to use this...
+    while(true) {
+        console.log("never returning!");
+    }
+}
