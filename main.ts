@@ -572,8 +572,30 @@ const printTrianglePoints = (trianglepoints: Triangle) => {
 };
 
 /**
- * Modules
+ * Modules and Imports
  * We want to use functions/classes/etc from other files.
+ * IMPORTS AT THE TOP!
  */
-import {myText} from "./myExports"; // This is how to import from files!
+import { myText } from "./myExports"; // This is how to import from files!
+import { Square } from "./classExports";
+
 console.log(myText);
+
+const square = new Square(3, 3);
+console.log(square.getArea());
+
+/**
+ * Namespaces.
+ * More organization tools.
+ */
+namespace CaseChange {
+  export function upperCase(myString: string): string { // Without export, the function cannot be used or seen.
+    return myString.toUpperCase();
+  }
+  export function lowerCase(myString: string): string {
+    return myString.toLowerCase();
+  }
+}
+
+console.log(CaseChange.lowerCase("UPPER ORIGINALLY"));
+console.log(CaseChange.upperCase("lower originally"));

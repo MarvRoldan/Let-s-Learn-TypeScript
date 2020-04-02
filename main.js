@@ -293,5 +293,21 @@ var printTrianglePoints = function (trianglepoints) {
     console.log(trianglepoints.pointA, trianglepoints.pointB, trianglepoints.pointC);
 };
 var myExports_1 = require("./myExports");
+var classExports_1 = require("./classExports");
 console.log(myExports_1.myText);
+var square = new classExports_1.Square(3, 3);
+console.log(square.getArea());
+var CaseChange;
+(function (CaseChange) {
+    function upperCase(myString) {
+        return myString.toUpperCase();
+    }
+    CaseChange.upperCase = upperCase;
+    function lowerCase(myString) {
+        return myString.toLowerCase();
+    }
+    CaseChange.lowerCase = lowerCase;
+})(CaseChange || (CaseChange = {}));
+console.log(CaseChange.lowerCase("UPPER ORIGINALLY"));
+console.log(CaseChange.upperCase("lower originally"));
 //# sourceMappingURL=main.js.map
