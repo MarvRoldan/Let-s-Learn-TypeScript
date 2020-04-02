@@ -492,3 +492,76 @@ class Rectangle {
     return this.height * this.width;
   }
 }
+
+let myRectangle = new Rectangle(5, 10);
+console.log(myRectangle.area());
+console.log(myRectangle.calcArea());
+
+/**
+ * Static Methods.
+ */
+class Addition {
+  // Properties
+  static numOne = 1;
+  static numTwo = 2;
+
+  // Methods
+  static calcSum() {
+    return this.numOne + this.numTwo;
+  }
+}
+console.log(Addition.calcSum());
+
+/**
+ * Public vs. Private.
+ */
+class Rectangle2 {
+  // Properties
+  private height: number;
+  private width: number;
+
+  // Constructor
+  public constructor(height: number, width: number) {
+    this.height = height;
+    this.width = width;
+  }
+
+  // Methods
+  public area() {
+    return this.calcArea();
+  }
+
+  public calcArea() {
+    return this.height * this.width;
+  }
+}
+
+// What is encapsulation?
+// User that use your objedct should ONLY be aware of thawt they absoculety need to be aware of.
+// ANYTHING ELSE SHOULD BE HIDDEN (aka "private").
+// Also lets you control and keep things streamlined/safer than if you don't have things set out this way.
+
+const rectObject = new Rectangle2(2, 3);
+console.log(rectObject.area()); // We cannot access private elements!
+console.log(rectObject.calcArea());
+
+const originalRect = new Rectangle(2, 3);
+console.log(originalRect.width); // If you can access things like this, consider a refactor of the class and the 00 design/problem strcture approach.
+console.log(originalRect.height);
+
+/**
+ * Interfaces!
+ * Interface is NOT a class. You cannot create a new object instances of an interface.
+ * Unlike an object, you cannot actually "use" it. You cannot put in data / retrieve data from an interface.
+ * Maybe cloest to an explicity defined type? Even that is misleading.
+ * Think of it as being like a "contract" between what you EXPECT and that thing will need to adhere to this "contract".
+ */
+interface Triangle {
+  pointA: number,
+  pointB: number,
+  pointC: number
+}
+
+const printTrianglePoints = (trianglepoints: Triangle) => { // Using this interface here. We have created a contract that we bind the inputs to.
+  console.log(trianglepoints.pointA, trianglepoints.pointB, trianglepoints.pointC);
+}

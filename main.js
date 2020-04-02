@@ -254,4 +254,40 @@ var Rectangle = (function () {
     };
     return Rectangle;
 }());
+var myRectangle = new Rectangle(5, 10);
+console.log(myRectangle.area());
+console.log(myRectangle.calcArea());
+var Addition = (function () {
+    function Addition() {
+    }
+    Addition.calcSum = function () {
+        return this.numOne + this.numTwo;
+    };
+    Addition.numOne = 1;
+    Addition.numTwo = 2;
+    return Addition;
+}());
+console.log(Addition.calcSum());
+var Rectangle2 = (function () {
+    function Rectangle2(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    Rectangle2.prototype.area = function () {
+        return this.calcArea();
+    };
+    Rectangle2.prototype.calcArea = function () {
+        return this.height * this.width;
+    };
+    return Rectangle2;
+}());
+var rectObject = new Rectangle2(2, 3);
+console.log(rectObject.area());
+console.log(rectObject.calcArea());
+var originalRect = new Rectangle(2, 3);
+console.log(originalRect.width);
+console.log(originalRect.height);
+var printTrianglePoints = function (trianglepoints) {
+    console.log(trianglepoints.pointA, trianglepoints.pointB, trianglepoints.pointC);
+};
 //# sourceMappingURL=main.js.map
