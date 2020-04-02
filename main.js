@@ -215,4 +215,43 @@ mySet.add(2);
 mySet.add(3);
 mySet.add(4);
 console.log(mySet);
+var myArray = ["one", 1, "two", 2, "three", 3];
+myArray.forEach(function (element) {
+    console.log("This is the value~ " + element);
+});
+function addition(_a) {
+    var numOne = _a[0], numTwo = _a[1];
+    var sum = numOne + numTwo;
+    console.log(sum);
+}
+addition([1, 2]);
+var myArray2 = [1, 2, 3, "a", "b", "c"];
+console.log.apply(console, myArray2);
+function signIn(signInMessage) {
+    var names = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        names[_i - 1] = arguments[_i];
+    }
+    console.log(signInMessage + " " + names.join(", ") + ".");
+}
+signIn("What's up", "Tim", "Bruce", "Dick", "Jason");
+function defaultParamsFunction(firstParam, secondParam) {
+    if (secondParam === void 0) { secondParam = "default param!"; }
+    console.log("first Param " + firstParam + " and now the second param " + secondParam);
+}
+defaultParamsFunction("one param");
+defaultParamsFunction("one param", "two param");
+var Rectangle = (function () {
+    function Rectangle(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    Rectangle.prototype.area = function () {
+        return this.calcArea();
+    };
+    Rectangle.prototype.calcArea = function () {
+        return this.height * this.width;
+    };
+    return Rectangle;
+}());
 //# sourceMappingURL=main.js.map

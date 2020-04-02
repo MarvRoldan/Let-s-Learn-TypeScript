@@ -314,7 +314,7 @@ const person = {
 
 console.log(person.name.toUpperCase()); // TS KNOWS that this is a string data type!
 
-// Let's explicitly define the merson object type!
+// Let's explicitly define the person object type!
 const person2: {
   // EXPLICITLY DEFINED. For EACH of the properties in one "bundle" of an object.
   name: string;
@@ -333,7 +333,7 @@ let anotherPerson = {
   id: 56465465,
   likesPizza: true,
   dog: {
-    // THIS DOG OBJECT IS NESTER WITHIN ANOTHER OBJECT!
+    // THIS DOG OBJECT IS NESTED WITHIN ANOTHER OBJECT!
     dogName: "Doggy",
     isHappy: true
   }
@@ -419,3 +419,76 @@ mySet.add(2); // Stay the same.
 mySet.add(3); // Stay the same.
 mySet.add(4); // Gets added since it's UNIQUE!
 console.log(mySet);
+
+/**
+ * Template Literals!
+ */
+let myArray: (string | number)[] = ["one", 1, "two", 2, "three", 3];
+myArray.forEach(element => {
+  console.log(`This is the value~ ${element}`);
+});
+
+/***
+ * Destructuring.
+ */
+function addition([numOne, numTwo]: [number, number]) {
+  // We destructure out the array from this like so.
+  let sum: number = numOne + numTwo;
+  console.log(sum);
+}
+
+addition([1, 2]); // Passing in an array.
+
+/**
+ * Spread Operator
+ */
+let myArray2 = [1, 2, 3, "a", "b", "c"];
+console.log(...myArray2);
+
+/**
+ * Rest Parameter.
+ */
+function signIn(signInMessage: string, ...names: string[]) {
+  console.log(signInMessage + " " + names.join(", ") + ".");
+}
+
+signIn("What's up", "Tim", "Bruce", "Dick", "Jason");
+
+/**
+ * Default parameters.
+ */
+function defaultParamsFunction(
+  firstParam: string,
+  secondParam = "default param!"
+) {
+  console.log(
+    `first Param ${firstParam} and now the second param ${secondParam}`
+  );
+}
+defaultParamsFunction("one param");
+defaultParamsFunction("one param", "two param");
+
+/**
+ * Classes
+ */
+
+class Rectangle {
+  // Properties
+  height: number;
+  width: number;
+
+  // Constructor
+  constructor(height: number, width: number) {
+    this.height = height;
+    this.width = width;
+  }
+
+  // Methods
+  area() {
+    return this.calcArea();
+  }
+
+  calcArea() {
+    return this.height * this.width;
+  }
+}
