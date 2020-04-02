@@ -31,6 +31,7 @@ console.log(booleanExample);
 function addNumbers(a, b) {
     return a + b;
 }
+;
 console.log(addNumbers(4, 6));
 var concatenateStrings = function (stringA, stringB) {
     return stringA + stringB;
@@ -72,4 +73,31 @@ var fn3 = function (inputString) {
     console.log(inputString);
 };
 fn3(String(numberVariable));
+var unionTypesFunction = function (a) {
+    if (typeof a === "string") {
+        console.log("You passed in a string!");
+    }
+    else if (typeof a === "number") {
+        console.log("You passed in a number!");
+    }
+};
+unionTypesFunction("a");
+unionTypesFunction(2);
+var varA = "Hello World!";
+var literalTypesFunction = function (a) {
+    console.log("This is a literal type! " + a);
+};
+literalTypesFunction("literally");
+var literallyReturningLeralsFunction = function () {
+    return "literally";
+};
+var unionTypeLiteral = function (a) {
+    return 5;
+};
+console.log(unionTypeLiteral(true));
+function stringsAndNumbersFunctionExample(a, b) {
+    return "a";
+}
+;
+console.log(stringsAndNumbersFunctionExample(878787, "Hello World!"));
 //# sourceMappingURL=main.js.map

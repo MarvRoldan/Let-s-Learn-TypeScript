@@ -73,7 +73,7 @@ function addNumbers(a: number, b: number): number {
     // return = true; // These won't work!
     // return = "string";
     // return = {};
-}
+};
 
 console.log(addNumbers(4, 6));
 // addNumbers("string", "string"); // Won't work. Only numbers!
@@ -83,7 +83,7 @@ console.log(addNumbers(4, 6));
  */
 var concatenateStrings = (stringA: string, stringB: string): string => {
     return stringA + stringB; // Concatenates Strings!
-}
+};
 console.log(concatenateStrings("Hello ", "World!"));
 
 /**
@@ -91,14 +91,14 @@ console.log(concatenateStrings("Hello ", "World!"));
  */
 var returnNothingFunction = (a: string): void => {
     console.log(a);
-}
+};
 
 /**
  * Booleans
  */
 const booleansAndOperatorFunction = (a: boolean, b: boolean): boolean => {
     return a && b;
-}
+};
 console.log(booleansAndOperatorFunction(true, true));
 
 /**
@@ -108,7 +108,7 @@ var neverReturnFunction = (): never => { // Infinite while loop! There are a few
     while(true) {
         console.log("never returning!");
     }
-}
+};
 
 /**
  * Any....
@@ -117,7 +117,7 @@ var neverReturnFunction = (): never => { // Infinite while loop! There are a few
  */
 var functionWithAny = (a: any, b: any): any => {
     return 9000 + "Hello " + 9001 + "World!";
-}
+};
 console.log(functionWithAny("Hello " + "World!", false)); // Look at what it returns when called....
 
 /**
@@ -131,7 +131,7 @@ var functionWithTypeGuards = (a: any): void => {
     } else if (typeof a === "number") { // The typeguard is the "typeof a === "number""
         console.log("Input is a number data type!");
     }
-}
+};
 functionWithTypeGuards("Hello World!");
 functionWithTypeGuards(8);
 
@@ -139,7 +139,7 @@ functionWithTypeGuards(8);
 let stringVariable = "123";
 const fn2 = (inputNumber: number) => {
     console.log(inputNumber);
-}
+};
 
 // fn2(stringVariable); // Won't accept anothing but a number! Cast it!
 fn2(Number(stringVariable));
@@ -148,7 +148,61 @@ fn2(Number(stringVariable));
 const numberVariable = 432;
 const fn3 = (inputString: string) => {
     console.log(inputString);
-}
+};
 
 // fn3(numberVariable); // Won't accept anothing but a string! Cast it!
 fn3(String(numberVariable));
+
+/**
+ * Union types.
+ * Two or more types...
+ */
+const unionTypesFunction = (a: string | number) => {
+    if(typeof a === "string") {
+        console.log("You passed in a string!");
+    } else if (typeof a === "number") {
+        console.log("You passed in a number!");
+    }
+};
+
+unionTypesFunction("a");
+unionTypesFunction(2);
+// unionTypesFunction(true); // It still does NOT take a boolean though!!!
+
+/**
+ * Literal types!
+ * LITERALLY ONLY THOSE TYPES
+ */
+const varA = "Hello World!";
+// varA = "String"; // Not working to work! Only goiong to be that initial value. 
+
+const literalTypesFunction = (a: "literally") => {
+    console.log("This is a literal type! " + a);
+};
+
+literalTypesFunction("literally"); // This works!
+// literalTypesFunction("string"); // This does not work!
+
+const literallyReturningLeralsFunction = () : "literally" => {
+    return "literally";
+    // return "string"; // These don't work!
+    // return "2"; // These dont't work!
+};
+/**
+ * Unions and Literals in one go!
+ * Very fine control over what you can use here!
+ */
+const unionTypeLiteral = (a: 2 | 3 | 4| "string" | true) : 5 | "string" | false => { // This can be hard to read...
+    return 5;
+};
+console.log(unionTypeLiteral(true)); // Notice what's being logged.
+
+/**
+ * Type Allias!
+ */
+type StringsAndNumbers = number | string;
+
+function stringsAndNumbersFunctionExample (a: StringsAndNumbers, b: StringsAndNumbers): StringsAndNumbers { // 3 here alone... in a toy example.
+    return "a";
+};
+console.log(stringsAndNumbersFunctionExample(878787, "Hello World!"));
