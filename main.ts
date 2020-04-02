@@ -378,4 +378,44 @@ console.log(PizzaToppings.HAM);
  * Remember ES6 Syntax!
  */
 const myMap = new Map();
-myMap.set("one", "value of one");
+myMap.set("one", "value of one"); // KEY  VALUE PAIR
+myMap.set("two", "value of two");
+myMap.set("three", "value of three");
+
+console.log(myMap.get("three"));
+
+type MyMapType = Record<number, string>;
+
+const myOtherMap: Record<number, string> = {
+  // KEY  VALUE PAIR
+  1: "Hello", // KEY  VALUE PAIR
+  2: "World!", // KEY  VALUE PAIR
+  3: "Third Value", // KEY  VALUE PAIR
+  4: "Fourth Value", // KEY  VALUE PAIR
+  8765763574354: "Whatever Value" // KEY  VALUE PAIR
+};
+
+myOtherMap[1]; //This is how you can get a particular value out by specifying it's key!
+console.log(myOtherMap[1]);
+
+myOtherMap[8765763574354];
+console.log(myOtherMap[8765763574354]);
+
+myOtherMap[9001] = "This value is over 9000!";
+console.log(myOtherMap[9001]);
+
+/**
+ * Sets!
+ * Same as ES6 Syntax!
+ */
+const mySet = new Set(); // A set will only hold UNIQUE values.
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+console.log(mySet);
+
+// A set will only hold UNIQUE values.
+mySet.add(2); // Stay the same.
+mySet.add(3); // Stay the same.
+mySet.add(4); // Gets added since it's UNIQUE!
+console.log(mySet);

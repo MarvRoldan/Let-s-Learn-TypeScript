@@ -190,4 +190,29 @@ console.log(PizzaToppings.PINEAPPLE);
 console.log(PizzaToppings.HAM);
 var myMap = new Map();
 myMap.set("one", "value of one");
+myMap.set("two", "value of two");
+myMap.set("three", "value of three");
+console.log(myMap.get("three"));
+var myOtherMap = {
+    1: "Hello",
+    2: "World!",
+    3: "Third Value",
+    4: "Fourth Value",
+    8765763574354: "Whatever Value"
+};
+myOtherMap[1];
+console.log(myOtherMap[1]);
+myOtherMap[8765763574354];
+console.log(myOtherMap[8765763574354]);
+myOtherMap[9001] = "This value is over 9000!";
+console.log(myOtherMap[9001]);
+var mySet = new Set();
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+console.log(mySet);
+mySet.add(2);
+mySet.add(3);
+mySet.add(4);
+console.log(mySet);
 //# sourceMappingURL=main.js.map
