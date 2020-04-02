@@ -31,7 +31,6 @@ console.log(booleanExample);
 function addNumbers(a, b) {
     return a + b;
 }
-;
 console.log(addNumbers(4, 6));
 var concatenateStrings = function (stringA, stringB) {
     return stringA + stringB;
@@ -98,6 +97,52 @@ console.log(unionTypeLiteral(true));
 function stringsAndNumbersFunctionExample(a, b) {
     return "a";
 }
-;
 console.log(stringsAndNumbersFunctionExample(878787, "Hello World!"));
+var unionTypeLiterals = function (a) {
+    return 5;
+};
+var basicConsoleDotLogFunction = function () {
+    return console.log("Hello I am the basic function");
+};
+var basicConsoleDotLogFunction2 = function () {
+    return console.log("Hello I am the basic function #2");
+};
+var basicConsoleDotLogFunction3 = function () {
+    return console.log("Hello I am the basic function #3");
+};
+basicConsoleDotLogFunction();
+var functionAcceptingAnotherFunctionInParams = function (callback) {
+    callback();
+};
+functionAcceptingAnotherFunctionInParams(basicConsoleDotLogFunction);
+functionAcceptingAnotherFunctionInParams(basicConsoleDotLogFunction2);
+functionAcceptingAnotherFunctionInParams(basicConsoleDotLogFunction3);
+var functionReturningBasicFunction = function () {
+    return function (a) {
+        console.log("This function was printed!");
+        console.log(a);
+        return 5;
+    };
+};
+console.log(functionReturningBasicFunction()("Hello World Again!"));
+var functionTakingOneFunctionAsAnArgumentAndReturningAnotherFunction = function (aString, callback) {
+    var closureConst = callback(aString);
+    return function (callbackString) {
+        return closureConst + callbackString;
+    };
+};
+console.log(functionTakingOneFunctionAsAnArgumentAndReturningAnotherFunction("Hello ", function (a) {
+    return a;
+})("World! =("));
+function anyFunction(a, b) {
+    a = 2;
+    a = {};
+    a = "42";
+    a = +a;
+    b = 8;
+    b = { objectProperty: "okThen" };
+    var c = +a + " " + b.objectProperty;
+    return c;
+}
+console.log(anyFunction("StringsStringsStrings", 9001));
 //# sourceMappingURL=main.js.map
