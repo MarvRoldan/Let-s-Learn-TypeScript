@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 console.log("changed");
 var a = 1;
 var b = 1 + 2;
@@ -290,4 +292,6 @@ console.log(originalRect.height);
 var printTrianglePoints = function (trianglepoints) {
     console.log(trianglepoints.pointA, trianglepoints.pointB, trianglepoints.pointC);
 };
+var myExports_1 = require("./myExports");
+console.log(myExports_1.myText);
 //# sourceMappingURL=main.js.map

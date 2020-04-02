@@ -557,11 +557,23 @@ console.log(originalRect.height);
  * Think of it as being like a "contract" between what you EXPECT and that thing will need to adhere to this "contract".
  */
 interface Triangle {
-  pointA: number,
-  pointB: number,
-  pointC: number
+  pointA: number;
+  pointB: number;
+  pointC: number;
 }
 
-const printTrianglePoints = (trianglepoints: Triangle) => { // Using this interface here. We have created a contract that we bind the inputs to.
-  console.log(trianglepoints.pointA, trianglepoints.pointB, trianglepoints.pointC);
-}
+const printTrianglePoints = (trianglepoints: Triangle) => {
+  // Using this interface here. We have created a contract that we bind the inputs to.
+  console.log(
+    trianglepoints.pointA,
+    trianglepoints.pointB,
+    trianglepoints.pointC
+  );
+};
+
+/**
+ * Modules
+ * We want to use functions/classes/etc from other files.
+ */
+import {myText} from "./myExports"; // This is how to import from files!
+console.log(myText);
