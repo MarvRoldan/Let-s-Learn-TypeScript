@@ -145,4 +145,49 @@ function anyFunction(a, b) {
     return c;
 }
 console.log(anyFunction("StringsStringsStrings", 9001));
+var person = {
+    name: "John Doe",
+    id: 98768767,
+    likesPizza: true
+};
+console.log(person.name.toUpperCase());
+var person2 = {
+    name: "John Doe",
+    id: 98768767,
+    likesPizza: true
+};
+var aNumber = 2;
+var anotherPerson = {
+    name: "John Doe",
+    id: 56465465,
+    likesPizza: true,
+    dog: {
+        dogName: "Doggy",
+        isHappy: true
+    }
+};
+var arr = ["one", "two", "three", "four"];
+arr.forEach(function (element) {
+    console.log(element);
+});
+var numberArray = [];
+var numberOrStringArray;
+numberOrStringArray = [1, 2, 3, "one", "two", "three"];
+numberOrStringArray.forEach(function (element) {
+    console.log(element);
+});
+var PizzaToppings;
+(function (PizzaToppings) {
+    PizzaToppings[PizzaToppings["PINEAPPLE"] = 0] = "PINEAPPLE";
+    PizzaToppings[PizzaToppings["PEPPERONI"] = 1] = "PEPPERONI";
+    PizzaToppings[PizzaToppings["HAM"] = 2] = "HAM";
+    PizzaToppings[PizzaToppings["CHEESE"] = 3] = "CHEESE";
+    PizzaToppings[PizzaToppings["MUSHROOMS"] = 4] = "MUSHROOMS";
+    PizzaToppings[PizzaToppings["MORE"] = 5] = "MORE";
+})(PizzaToppings || (PizzaToppings = {}));
+console.log(PizzaToppings);
+console.log(PizzaToppings.PINEAPPLE);
+console.log(PizzaToppings.HAM);
+var myMap = new Map();
+myMap.set("one", "value of one");
 //# sourceMappingURL=main.js.map

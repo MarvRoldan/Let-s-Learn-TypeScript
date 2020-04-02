@@ -299,3 +299,83 @@ function anyFunction(a: any, b: any): any {
   return c;
 }
 console.log(anyFunction("StringsStringsStrings", 9001));
+
+/**
+ * Objects and other Data Structures!
+ */
+const person = {
+  // Hover over const person!!!
+  name: "John Doe", // Type inference makes it so that this name is STRING data type.
+  id: 98768767,
+  likesPizza: true
+};
+
+// person.name = true; // Does not work because it's a "STRING"
+
+console.log(person.name.toUpperCase()); // TS KNOWS that this is a string data type!
+
+// Let's explicitly define the merson object type!
+const person2: {
+  // EXPLICITLY DEFINED. For EACH of the properties in one "bundle" of an object.
+  name: string;
+  id: number;
+  likesPizza: boolean;
+} = {
+  name: "John Doe",
+  id: 98768767,
+  likesPizza: true
+};
+
+let aNumber: number = 2; // Same this as above! But above is an object!
+
+let anotherPerson = {
+  name: "John Doe",
+  id: 56465465,
+  likesPizza: true,
+  dog: {
+    // THIS DOG OBJECT IS NESTER WITHIN ANOTHER OBJECT!
+    dogName: "Doggy",
+    isHappy: true
+  }
+};
+
+/**
+ * Arrays!
+ * Very similar to JS!
+ */
+const arr = ["one", "two", "three", "four"];
+
+arr.forEach(element => {
+  console.log(element);
+});
+
+const numberArray: number[] = []; // No data vaules in this empty list... nothing to infer the type from! It's an empty list!
+
+let numberOrStringArray: (number | string)[];
+numberOrStringArray = [1, 2, 3, "one", "two", "three"];
+
+numberOrStringArray.forEach(element => {
+  console.log(element);
+});
+
+/**
+ * Enumerations!
+ */
+enum PizzaToppings {
+  PINEAPPLE,
+  PEPPERONI,
+  HAM,
+  CHEESE,
+  MUSHROOMS,
+  MORE
+}
+console.log(PizzaToppings);
+console.log(PizzaToppings.PINEAPPLE);
+console.log(PizzaToppings.HAM);
+
+/**
+ * MAPS
+ * Remember ES6 Syntax!
+ */
+const myMap = new Map();
+myMap.set("one", "value of one");
